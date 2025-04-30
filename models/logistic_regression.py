@@ -61,8 +61,8 @@ class LogisticRegression:
         logger.debug(f"Compute Cost Function: x.shape = {x.shape}, y.shape = {y.shape}")
 
         m = x.shape[0]
-
-        cost = np.sum((np.log(pi+1e-8)*y)+(-np.log(1-pi+1e-8))*(1-y))
+        pi = np.clip(pi , 1e-8 , 1 - 1e-8)
+        cost = -np.sum((np.log(pi)*y)+(-np.log(1-pi))*(1-y))
         cost = cost/m
         return cost
 
