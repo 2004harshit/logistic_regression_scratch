@@ -110,7 +110,7 @@ class LogisticRegression:
         predictions = self.sigmoid(z)
         return np.round(predictions).astype(int)
     
-
+    # This is a temporary comment .
 
 
 
